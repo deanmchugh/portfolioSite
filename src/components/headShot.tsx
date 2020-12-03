@@ -1,13 +1,15 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Image = () => {
+import './styles.css'
+
+const HeadShot = (): ReactElement => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "headShot.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 600, maxHeight: 600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -24,9 +26,11 @@ const Image = () => {
       fluid={data.placeholderImage.childImageSharp.fluid} 
       imgStyle={{
         borderRadius: `50%`,
+        width: '30vw',
+        height: '30vw',
       }}
     />
   )
 }
 
-export default Image
+export default HeadShot
