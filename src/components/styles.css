@@ -1,0 +1,81 @@
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    height: 100vh;
+}
+
+.heroImage {
+    width: 50vw;
+    justify-content: space-around;
+}
+
+.heroTitle {
+    text-align: end;
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+.fluxName {
+    font-family: neon;
+    color: #ff0000;
+    font-size: 5vw;
+    line-height: 5vw;
+    text-shadow: 0 0 3vw #b20000;
+    transform: skewy(-10deg);
+}
+
+.fluxTitle {
+    font-family: neon;
+    color: #426DFB;
+    font-size: 5.5vw;
+    line-height: 5.5vw;
+    text-shadow: 0 0 3vw #2356FF;
+    transform: skewy(-10deg);
+}
+
+.fluxName {
+    animation: fluxName 2s linear infinite;
+    -moz-animation: fluxName 2s linear infinite;
+    -webkit-animation: fluxName 2s linear infinite;
+    -o-animation: fluxName 2s linear infinite;
+}
+
+.fluxTitle {
+    animation: fluxTitle 2s linear infinite;
+    -moz-animation: fluxTitle 2s linear infinite;
+    -webkit-animation: fluxTitle 2s linear infinite;
+    -o-animation: fluxTitle 2s linear infinite;
+}
+
+@keyframes fluxTitle {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+        color: #28D7FE;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+        color: #146C80;
+    }
+}
+
+@keyframes fluxName {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #e50000, 0 0 3vw #e50000, 0 0 10vw #e50000, 0 0 10vw #e50000, 0 0 .4vw #fe8b8b, .5vw .5vw .1vw #801414;
+        color: #fe2828;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #800808, 0 0 1.5vw #800808, 0 0 5vw #800808, 0 0 5vw #800808, 0 0 .2vw #800808, .5vw .5vw .1vw #400a0a;
+        color: #801414;
+    }
+}
