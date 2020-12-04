@@ -1,11 +1,15 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { ReactElement } from "react"
 
-const Header = () => (
-  <header>
+import LinkButton from './linkButton'
 
-  </header>
-)
+const Header = (): ReactElement => {
+  return (
+    <header>
+      <LinkButton label={'Contact me'} link={'/contact'} />
+    </header>
+  )
+}
 
 export default Header
