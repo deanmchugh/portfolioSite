@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react'
 
-import HeadShot from './headShot'
+import Headshot from './headshot'
 
-const HeroImage = (): ReactElement => {
+const HeadshotHero = (): ReactElement => {
     return (
-        <div className={'heroImage'}>
-            <HeadShot />
-            <div className={'heroTitle'}>
+        <div className={'headshotImage'}>
+            <Headshot />
+            <div className={'headshotTitle'}>
                <div className={'fluxName'}>Dean McHugh</div> 
                <div className={'fluxTitle'}>Web Developer</div>
             </div>
@@ -14,4 +14,4 @@ const HeroImage = (): ReactElement => {
     )
 }
 
-export default HeroImage
+export default HeadshotHero

@@ -2,19 +2,22 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HeroImage from '../components/heroImage'
+import HeadshotHero from '../components/headshotHero'
+import HomeBackgroundImg from '../components/homeBackgroundImg'
 import './styles.css'
 
 const IndexPage = () => (
   <Layout>
-    <>
-      <SEO title="Home" />
-      <div className={'indexPage'} >
-        <div className={'heroImage'} >
-            <HeroImage />
+    <HomeBackgroundImg>
+      <>
+        <SEO title="Home" />
+        <div className={'indexPage'}>
+          <div className={'heroImage'} >
+              <HeadshotHero />
+          </div>
         </div>
-      </div>
-    </>
+      </>
+    </HomeBackgroundImg>
   </Layout>
 )
 

@@ -21,7 +21,7 @@ const Layout = ({ children }: Props) => {
 
   return (
       <div className={`layout`}>
-        <Header />
+        {/* <Header /> */}
         <main>{children}</main>
       </div>
   )

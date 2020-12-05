@@ -12,12 +12,12 @@ html, body {
     height: 100vh;
 }
 
-.heroImage {
+.headshotImage {
     width: 50vw;
     justify-content: space-around;
 }
 
-.heroTitle {
+.headshotTitle {
     text-align: end;
     position: relative;
     top: -10px;
