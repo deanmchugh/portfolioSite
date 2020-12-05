@@ -1,10 +1,16 @@
 import React, { ReactElement } from 'react'
 
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+
 const Experience = (): ReactElement => {
     return (
-        <div>
-            <p>experience</p>
-        </div>
+        <Layout>
+            <>
+                <SEO title={'experience'} />
+                <p>experience</p>
+            </>
+        </Layout>
     )
 }
 

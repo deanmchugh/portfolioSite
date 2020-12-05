@@ -1,10 +1,16 @@
 import React, { ReactElement } from 'react'
 
+import SEO from '../components/seo'
+import Layout from '../components/layout'
+
 const Projects = (): ReactElement => {
     return (
-        <div>
-            <p>projects</p>
-        </div>
+        <Layout>
+            <>
+                <SEO title={'projects'} />
+                <p>projects</p>
+            </>
+        </Layout>
     )
 }
 
