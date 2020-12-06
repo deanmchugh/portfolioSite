@@ -13,33 +13,36 @@ html, body {
 }
 
 .headshotImage {
-    width: 50vw;
-    justify-content: space-around;
+    width: 45vw;
 }
 
 .headshotTitle {
     text-align: end;
     position: relative;
-    top: -10px;
+    padding: 20px 20px 20px 10px;
+    top: -80px;
     left: -10px;
+    background-color: rgb(31, 31, 31);
+    border: 5px solid rgb(171, 32, 253);
+    box-shadow: 0 0 3vw rgb(171, 32, 253);
+    border-radius: 10px;
+    transform: skewy(-10deg);
 }
 
 .fluxName {
     font-family: neon;
-    color: #ff0000;
-    font-size: 5vw;
+    color: #fa2020;
+    font-size: 5.2vw;
     line-height: 5vw;
-    text-shadow: 0 0 3vw #b20000;
-    transform: skewy(-10deg);
+    text-shadow: 0 0 3vw #b11515;
 }
 
 .fluxTitle {
     font-family: neon;
     color: #426DFB;
-    font-size: 5.5vw;
-    line-height: 5.5vw;
+    font-size: 4.5vw;
+    line-height: 5vw;
     text-shadow: 0 0 3vw #2356FF;
-    transform: skewy(-10deg);
 }
 
 .fluxName {
@@ -71,11 +74,11 @@ html, body {
 @keyframes fluxName {
     0%,
     100% {
-        text-shadow: 0 0 1vw #e50000, 0 0 3vw #e50000, 0 0 10vw #e50000, 0 0 10vw #e50000, 0 0 .4vw #fe8b8b, .5vw .5vw .1vw #801414;
-        color: #fe2828;
+        text-shadow: 0 0 1vw #e01a1a, 0 0 3vw #e41e1e, 0 0 10vw #e21f1f, 0 0 10vw #e02020, 0 0 .4vw #fa9d9d, .5vw .5vw .1vw #7a1d1d;
+        color: #fa4747;
     }
     50% {
-        text-shadow: 0 0 .5vw #800808, 0 0 1.5vw #800808, 0 0 5vw #800808, 0 0 5vw #800808, 0 0 .2vw #800808, .5vw .5vw .1vw #400a0a;
-        color: #801414;
+        text-shadow: 0 0 .5vw #7c1313, 0 0 1.5vw #791616, 0 0 5vw #7e1818, 0 0 5vw #7e1616, 0 0 .2vw #7e1818, .5vw .5vw .1vw #411212;
+        color: #802727;
     }
 }

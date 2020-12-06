@@ -12,7 +12,7 @@ const IndexPage = () => (
       <>
         <SEO title="Home" />
         <div className={'indexPage'}>
-          <div className={'heroImage'} >
+          <div className={'headshot'} >
               <HeadshotHero />
           </div>
         </div>
