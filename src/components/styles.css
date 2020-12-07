@@ -12,6 +12,20 @@ html, body {
     height: 100vh;
 }
 
+.header {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    background-color: tomato;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
 .headshotImage {
     width: 45vw;
 }

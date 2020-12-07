@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react"
 
-import Header from "./header"
+import Menu from "./menu"
 
 type Props = {
   children: ReactElement
@@ -9,7 +9,9 @@ type Props = {
 const Layout = ({ children }: Props): ReactElement => {
   return (
       <div className={`layout`}>
-        {/* <Header /> */}
+        <div className={'header'}>
+          <Menu />
+        </div>
         <main>{children}</main>
       </div>
   )

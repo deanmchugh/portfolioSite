@@ -2,8 +2,9 @@ import React, { ReactElement, useState, useCallback } from "react"
 import { Button } from '@material-ui/core'
 
 import LinkButton from './linkButton'
+import './styles.css'
 
-const Header = (): ReactElement => {
+const Menu = (): ReactElement => {
   const [visible, setVisible] = useState<string>('none')
 
   const handleShowMenu = useCallback(() => {
@@ -11,8 +12,9 @@ const Header = (): ReactElement => {
   }, [visible, setVisible])
 
   return (
-    <header>
+    <div>
       <div
+        className={'menu'}
         style={{display: visible}}
       >
         <LinkButton label={'home'} link={'/'} />
@@ -23,8 +25,8 @@ const Header = (): ReactElement => {
       <Button
         onClick={() => handleShowMenu()}
       >Menu</Button>
-    </header>
+    </div>
   )
 }
 
-export default Header
+export default Menu
