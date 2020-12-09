@@ -9,9 +9,7 @@ type Props = {
 const Layout = ({ children }: Props): ReactElement => {
   return (
       <div className={`layout`}>
-        <div className={'header'}>
-          <Menu />
-        </div>
+        <Menu />
         <main>{children}</main>
       </div>
   )
