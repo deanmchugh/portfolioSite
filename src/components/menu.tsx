@@ -1,6 +1,4 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { ReactElement, useState, useCallback } from 'react';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -11,49 +9,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-});
+import './styles.css'
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+const Menu = (): ReactElement => {
+  const [open, setOpen] = useState<boolean>(false);
 
-export default function Menu() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const handleOpenMenu = useCallback(() => {
+    setOpen(!open)
+  }, [open, setOpen])
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor: Anchor) => (
+  const list = (): ReactElement => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      })}
+      className={'menuList'}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={(): void => handleOpenMenu()}
+      onKeyDown={(): void => handleOpenMenu()}
     >
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -76,20 +46,20 @@ export default function Menu() {
   );
 
   return (
-    <div>
-      {(['left', 'right', 'top', 'bottom'] as Anchor[]).map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+    <div className={'menu'}>
+        <React.Fragment>
+          <Button onClick={(): void => handleOpenMenu()}>{'MENU'}</Button>
           <SwipeableDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
+            anchor={'left'}
+            open={open}
+            onClose={(): void => handleOpenMenu()}
+            onOpen={(): void => handleOpenMenu()}
           >
-            {list(anchor)}
+            {list()}
           </SwipeableDrawer>
         </React.Fragment>
-      ))}
     </div>
   );
 }
+
+export default Menu

@@ -17,6 +17,10 @@ html, body {
     z-index: 1;
 }
 
+.menuList {
+    width: 300px;
+}
+
 .headshotImage {
     width: 45vw;
 }
