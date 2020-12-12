@@ -1,13 +1,8 @@
 import React, { ReactElement, useState, useCallback } from 'react';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { 
+  SwipeableDrawer, Button, List, ListItem, ListItemText, IconButton 
+} from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons'
 
 import './styles.css'
 
@@ -28,16 +23,6 @@ const Menu = (): ReactElement => {
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -48,7 +33,12 @@ const Menu = (): ReactElement => {
   return (
     <div className={'menu'}>
         <React.Fragment>
-          <Button onClick={(): void => handleOpenMenu()}>{'MENU'}</Button>
+          <IconButton 
+            onClick={(): void => handleOpenMenu()}
+            aria-label={'open menu button'}
+          >
+            <MenuIcon style={{ fontSize: 100, color: 'white' }} />  
+          </IconButton>
           <SwipeableDrawer
             anchor={'left'}
             open={open}

@@ -26,9 +26,7 @@ const HeadShot = (): ReactElement => {
       fluid={data.placeholderImage.childImageSharp.fluid} 
       imgStyle={{
         borderRadius: `50%`,
-        marginTop: '20px',
-        border: '5px solid rgb(171, 32, 253)',
-        boxShadow: '0 0 3vw rgb(171, 32, 253)',
+        border: '5px solid white',
         width: '40vw',
         height: '40vw',
       }}
