@@ -2,9 +2,11 @@ import React, { ReactElement, useState, useCallback } from 'react';
 import { 
   SwipeableDrawer, Button, List, ListItem, ListItemText, IconButton 
 } from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons'
+import { Menu as MenuIcon, Close } from '@material-ui/icons'
 
 import './styles.css'
+
+const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 const Menu = (): ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
@@ -13,22 +15,26 @@ const Menu = (): ReactElement => {
     setOpen(!open)
   }, [open, setOpen])
 
-  const list = (): ReactElement => (
+  const list = 
     <div
       className={'menuList'}
       role="presentation"
       onClick={(): void => handleOpenMenu()}
       onKeyDown={(): void => handleOpenMenu()}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List
+        disablePadding
+      >
+        <ListItem button className={'menuClose'}>
+          <IconButton>
+            <Close style={{ fontSize: 90, color: 'white' }} />
+          </IconButton>
+        </ListItem>
+        <ListItem button>
+          <Button>button</Button>
+        </ListItem>
       </List>
-    </div>
-  );
+    </div>;
 
   return (
     <div className={'menu'}>
@@ -44,8 +50,10 @@ const Menu = (): ReactElement => {
             open={open}
             onClose={(): void => handleOpenMenu()}
             onOpen={(): void => handleOpenMenu()}
+            disableBackdropTransition={!iOS}
+            disableDiscovery={iOS}
           >
-            {list()}
+            {list}
           </SwipeableDrawer>
         </React.Fragment>
     </div>

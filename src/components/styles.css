@@ -19,6 +19,13 @@ html, body {
 
 .menuList {
     width: 300px;
+    background-color: black;
+    height: 100vh;
+}
+
+.menuClose {
+    position: relative;
+    left: -20px;
 }
 
 .headshotImage {
